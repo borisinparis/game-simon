@@ -1,5 +1,4 @@
 // Simon Game Implementation in JavaScript
-
 // Initialize variables
 let sequence = [];
 let playerSequence = [];
@@ -18,6 +17,7 @@ function startGame() {
 // Generate the next sequence
 function nextLevel() {
   level++;
+  level1.innerHTML = level;
   playerSequence = [];
   const nextColor = colors[Math.floor(Math.random() * colors.length)];
   sequence.push(nextColor);
@@ -54,7 +54,8 @@ function checkPlayerInput() {
   const currentIndex = playerSequence.length - 1;
 
   if (playerSequence[currentIndex] !== sequence[currentIndex]) {
-    alert("Game Over! Try again.");
+    gameOver.style.display = "block";
+    gameOverCancel.style.display = "block";
     startGame();
     return;
   }
@@ -74,6 +75,16 @@ rightBottom.id = "rightBottom";
 let leftBottom = document.createElement("button");
 leftBottom.id = "leftBottom";
 
+const gameOver = document.createElement("div");
+gameOver.className = "gameOver";
+gameOver.textContent = "Game Over!";
+document.getElementById("mainContain").appendChild(gameOver);
+
+const gameOverCancel = document.createElement("img");
+gameOverCancel.src = "closeicon.png";
+gameOverCancel.className = "close";
+document.getElementById("mainContain").appendChild(gameOverCancel);
+
 [rightTop, leftTop, rightBottom, leftBottom].forEach((button) => {
   button.className = "color-button";
   document.getElementById("mainContain").appendChild(button);
@@ -86,12 +97,20 @@ let midCircleTitle = document.createElement("h2");
 midCircleTitle.id = "midCircle_garchig";
 midCircleTitle.innerHTML = "Simon";
 
+let level1 = document.createElement("div");
+level1.className = "level";
+level1.innerHTML = "0";
+
 let startButton = document.createElement("button");
 startButton.id = "midCircle_dund";
 startButton.innerHTML = "Start";
-
-midCircle.append(midCircleTitle, startButton);
+midCircle.append(midCircleTitle, level1, startButton);
 document.getElementById("mainContain").appendChild(midCircle);
+
+gameOverCancel.addEventListener("click", () => {
+  gameOver.style.display = "none";
+  gameOverCancel.style.display = "none";
+});
 
 // Set up event listeners
 startButton.addEventListener("click", startGame);

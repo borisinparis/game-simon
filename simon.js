@@ -91,6 +91,11 @@ gameOver.className = "gameOver";
 gameOver.textContent = "Game Over!";
 gameContainer.appendChild(gameOver);
 
+const gameOverCancel = document.createElement("img");
+gameOverCancel.src = "closeicon.png";
+gameOverCancel.className = "close";
+
+gameContainer.appendChild(gameOverCancel);
 scoreDiv.appendChild(noteSpan);
 scoreDiv.appendChild(numberSpan);
 topControls.appendChild(soundClose);
@@ -157,6 +162,7 @@ function checkPlayerInput() {
 
   if (playerSequence[currentIndex] !== sequence[currentIndex]) {
     gameOver.style.display = "block";
+    gameOverCancel.style.display = "block";
     startGame();
     return;
   }
@@ -165,6 +171,11 @@ function checkPlayerInput() {
     setTimeout(nextLevel, 1000);
   }
 }
+
+gameOverCancel.addEventListener("click", () => {
+  gameOver.style.display = "none";
+  gameOverCancel.style.display = "none";
+});
 
 startButton.addEventListener("click", startGame);
 document.querySelectorAll(".animal").forEach((button) => {
