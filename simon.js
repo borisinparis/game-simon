@@ -5,43 +5,30 @@ const gameContainer = document.getElementById("game-container");
 const animals = [
   {
     id: "dove",
-    key: "4",
-    name: "dove",
-    sound: "voilin-music",
     image: "dove.png",
-    x: 40,
-    y: 35,
+    x: 42,
+    y: 25,
   },
   {
     id: "rabbit",
-    key: "3",
-    name: "rabbit",
-    sound: "guitar.mp3",
     image: "rabbit1.gif",
-    x: 40,
-    y: 45,
+    x: 42,
+    y: 40,
   },
   {
     id: "monkey",
-    key: "2",
-    name: "monkey",
-    sound: "piano.mp3",
     image: "monkey.gif",
-    x: 40,
+    x: 42,
     y: 55,
   },
   {
     id: "elephant",
-    key: "1",
-    name: "elephant",
-    sound: "cultue.mp3",
     image: "elephant.png",
-    x: 40,
-    y: 65,
+    x: 42,
+    y: 70,
   },
 ];
 // Дүрснүүдийг үүсгэж, байрлуулах функц
-// function createAnimals() {
 animals.forEach((animal) => {
   // Animal wrapper
   const animalDiv = document.createElement("button");
