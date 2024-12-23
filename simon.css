@@ -1,37 +1,23 @@
 /* Ерөнхий тохиргоо */
 .body {
-  /* background-image: url(apple.jpg); */
   background-size: 30%;
   background-position: center 50px;
-  /* background-repeat: no-repeat;
-  display: flex;
-  justify-content: center; */
-  /* width: 100vh;
-  height: 100vw; */
-
   margin: auto;
-  top:5%;
-  
+  top: 5%;
 }
 #game-container {
   position: relative;
   background-image: url(apple.jpg);
   background-size: 100%;
-  /* background-position: center 50px; */
   background-repeat: no-repeat;
-  margin:auto;
+  margin: auto;
   width: 100%;
   aspect-ratio: 1/2;
-  /* background-color: #afe0c2; */
   background-position: center;
   /* Ногоон өнгө */
   border-radius: 10px;
-  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  left:40px; */
-  /* top: 10px; */
   width: 100vh;
   height: 100vw;
-
 }
 .animal {
   position: absolute;
@@ -39,7 +25,7 @@
   height: 10%;
   border-radius: 50%;
   background-color: #a1ceb2;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
@@ -67,12 +53,11 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
-  width:90%;
+  width: 90%;
   position: relative;
-  height:7%;
-  top:20%;
-  margin:auto;
-
+  height: 7%;
+  top: 20%;
+  margin: auto;
 }
 /* Нот дүрс ба тоо */
 .score {
@@ -85,8 +70,7 @@
   position: absolute;
   left: 15%;
   aspect-ratio: 1/0.6;
-  width:20%;
-  top:8%;
+  width: 13%;
 }
 .note {
   font-size: 25px;
@@ -97,9 +81,10 @@
   font-size: 20px;
   font-weight: bold;
   color: #15274a;
-  padding:5%;
+  padding: 5%;
 }
-.soundIcon{width: 10%;
+.soundIcon {
+  width: 10%;
   height: 25%;
   background-color: #bcdb40;
   border-radius: 50%;
@@ -107,7 +92,6 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-
 }
 /* Дугуй товчлуурууд */
 .circle-button {
@@ -129,16 +113,15 @@
   width: 40%;
   height: auto;
 }
-.soundClose{
-  display:flex;
-  gap:15%;
-  position:absolute;
-   left: 80%;
-
+.soundClose {
+  display: flex;
+  gap: 15%;
+  position: absolute;
+  left: 80%;
 }
-.startButton{
-  width:15%;
-  height:3%;
+.startButton {
+  width: 15%;
+  height: 3%;
   background-color: rgb(131, 224, 38);
   font-size: 15px;
   color: #ffffff;
@@ -146,9 +129,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position:absolute;
-  bottom:20%;
-  left:40%;
+  position: absolute;
+  bottom: 20%;
+  left: 40%;
   font-weight: 300;
 }
 @keyframes ajillah {
@@ -156,6 +139,6 @@
     background-color: red;
   }
   to {
-  background-color: #000000;
+    background-color: #000000;
   }
 }
