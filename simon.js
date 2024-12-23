@@ -4,7 +4,7 @@ const gameContainer = document.getElementById("game-container");
 // Дүрснүүдийн мэдээлэл
 const animals = [
   {
-    id: "rigth-top",
+    id: "dove",
     key: "4",
     name: "dove",
     sound: "voilin-music",
@@ -13,7 +13,7 @@ const animals = [
     y: 35,
   },
   {
-    id: "left-top",
+    id: "rabbit",
     key: "3",
     name: "rabbit",
     sound: "guitar.mp3",
@@ -22,7 +22,7 @@ const animals = [
     y: 45,
   },
   {
-    id: "rigth-bottom",
+    id: "monkey",
     key: "2",
     name: "monkey",
     sound: "piano.mp3",
@@ -31,7 +31,7 @@ const animals = [
     y: 55,
   },
   {
-    id: "left-bottom",
+    id: "elephant",
     key: "1",
     name: "elephant",
     sound: "cultue.mp3",
@@ -40,7 +40,6 @@ const animals = [
     y: 65,
   },
 ];
-// let idarray=["right-top","left-top","right-bottom","left-bottom"]
 // Дүрснүүдийг үүсгэж, байрлуулах функц
 // function createAnimals() {
 animals.forEach((animal) => {
@@ -57,12 +56,6 @@ animals.forEach((animal) => {
   animalDiv.appendChild(img);
   gameContainer.appendChild(animalDiv);
 });
-baruundeed = document.getElementById("rigth-top");
-zuundeed = document.getElementById("left-top");
-baruundood = document.getElementById("rigth-bottom");
-zuundood = document.getElementById("left-bottom");
-const buttonArray = [baruundeed, zuundeed, zuundood, baruundood];
-
 // start button iin id bolon neej ogow
 const startButton = document.createElement("button");
 startButton.className = "startButton";
@@ -119,7 +112,7 @@ let sequence = [];
 let playerSequence = [];
 let level = 0;
 
-const colors = ["left-top", "rigth-top", "left-bottom", "rigth-bottom"];
+const animal = ["dove", "rabbit", "monkey", "elephant"];
 
 // Start the game
 function startGame() {
@@ -134,7 +127,7 @@ function nextLevel() {
   level++;
   numberSpan.innerHTML = level;
   playerSequence = [];
-  const nextColor = colors[Math.floor(Math.random() * colors.length)];
+  const nextColor = animal[Math.floor(Math.random() * animal.length)];
   sequence.push(nextColor);
   playSequence();
 }
@@ -186,7 +179,7 @@ document.querySelectorAll(".animal").forEach((button) => {
   });
 });
 
-function playButtonSound(soundFile) {
+/*function playButtonSound(soundFile) {
   const audio = new Audio(soundFile);
   audio.play();
 }
@@ -198,4 +191,4 @@ document.querySelectorAll(".animal").forEach((button) => {
       playButtonSound(animal.sound);
     });
   }
-});
+});*/
