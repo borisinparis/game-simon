@@ -15,8 +15,16 @@
   width: 100%;
   background: linear-gradient(to top, #00ffff, #8b8beb);
 }
-#playButton {
+#playButtonForKids {
   position: absolute;
+  background-color: #00ffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+#playButtonStandart {
+  position: absolute;
+  top: 55%;
   background-color: #00ffff;
   padding: 20px;
   border-radius: 10px;
