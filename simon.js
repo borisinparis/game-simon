@@ -1,6 +1,6 @@
 // ****************** togloomiin css n enees ehlene **************
 // Тоглоомын үндсэн container
-const gameContainer = document.getElementById("game-container");
+const gameContainer = document.getElementById("gameContainer");
 // Дүрснүүдийн мэдээлэл
 const animals = [
   {
@@ -84,6 +84,13 @@ const noteSpan = document.createElement("span");
 noteSpan.className = "note";
 noteSpan.innerHTML = "&#9835;"; // Нот дүрс
 
+//game over
+
+const gameOver = document.createElement("div");
+gameOver.className = "gameOver";
+gameOver.textContent = "Game Over!";
+gameContainer.appendChild(gameOver);
+
 scoreDiv.appendChild(noteSpan);
 scoreDiv.appendChild(numberSpan);
 topControls.appendChild(soundClose);
@@ -99,7 +106,7 @@ let sequence = [];
 let playerSequence = [];
 let level = 0;
 
-const animal = ["dove", "rabbit", "monkey", "elephant"];
+const zoo = ["dove", "rabbit", "monkey", "elephant"];
 
 // Start the game
 function startGame() {
@@ -114,23 +121,23 @@ function nextLevel() {
   level++;
   numberSpan.innerHTML = level;
   playerSequence = [];
-  const nextColor = animal[Math.floor(Math.random() * animal.length)];
-  sequence.push(nextColor);
+  const nextAnimal = zoo[Math.floor(Math.random() * zoo.length)];
+  sequence.push(nextAnimal);
   playSequence();
 }
 
 // Play the current sequence
 function playSequence() {
-  sequence.forEach((color, index) => {
+  sequence.forEach((animal, index) => {
     setTimeout(() => {
-      flashColor(color);
+      flashAnimal(animal);
     }, (index + 1) * 1000);
   });
 }
 
-// Flash the color on the screen
-function flashColor(color) {
-  const button = document.getElementById(color);
+// Flash the animal on the screen
+function flashAnimal(animal) {
+  const button = document.getElementById(animal);
   button.style.animation = "ajillah 1s linear";
   setTimeout(() => {
     button.style.animation = "none";
@@ -138,9 +145,9 @@ function flashColor(color) {
 }
 
 // Handle player input
-function handlePlayerInput(color) {
-  playerSequence.push(color);
-  flashColor(color);
+function handlePlayerInput(animal) {
+  playerSequence.push(animal);
+  flashAnimal(animal);
   checkPlayerInput();
 }
 
@@ -149,7 +156,7 @@ function checkPlayerInput() {
   const currentIndex = playerSequence.length - 1;
 
   if (playerSequence[currentIndex] !== sequence[currentIndex]) {
-    alert("Game Over! Try again.");
+    gameOver.style.display = "block";
     startGame();
     return;
   }

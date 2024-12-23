@@ -5,7 +5,7 @@
   margin: auto;
   top: 5%;
 }
-#game-container {
+#gameContainer {
   position: relative;
   background-image: url(apple.jpg);
   background-size: 100%;
@@ -30,9 +30,7 @@
   align-items: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
-
 .animal img {
   width: 100%;
   height: auto;
@@ -128,6 +126,21 @@
   bottom: 8%;
   left: 38%;
   font-weight: 300;
+}
+.gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  display: none;
 }
 @keyframes ajillah {
   from {
