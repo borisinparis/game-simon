@@ -16,8 +16,8 @@
   background-position: center;
   /* Ногоон өнгө */
   border-radius: 10px;
-  width: 100vh;
-  height: 100vw;
+  width: 1000px;
+  height: 1000px;
 }
 .animal {
   position: absolute;
@@ -104,11 +104,11 @@
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  /* transition: transform 0.2s ease;*/
 }
-.circle-button:hover {
+/*.circle-button:hover {
   transform: scale(1.1);
-}
+}*/
 .circle-button img {
   width: 40%;
   height: auto;

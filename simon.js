@@ -178,17 +178,3 @@ document.querySelectorAll(".animal").forEach((button) => {
     handlePlayerInput(button.id);
   });
 });
-
-/*function playButtonSound(soundFile) {
-  const audio = new Audio(soundFile);
-  audio.play();
-}
-document.querySelectorAll(".animal").forEach((button) => {
-  const animal = animals.find((a) => a.id === button.id);
-
-  if (animal && animal.sound) {
-    button.addEventListener("click", () => {
-      playButtonSound(animal.sound);
-    });
-  }
-});*/
