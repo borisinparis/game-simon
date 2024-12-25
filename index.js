@@ -6,6 +6,17 @@ let level = 0;
 
 const colors = ["leftTop", "rightTop", "leftBottom", "rightBottom"];
 
+const sounds = {
+  leftTop: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+  rightTop: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+  leftBottom: new Audio(
+    "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"
+  ),
+  rightBottom: new Audio(
+    "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"
+  ),
+};
+
 // Start the game
 function startGame() {
   sequence = [];
@@ -24,6 +35,13 @@ function nextLevel() {
   playSequence();
 }
 
+function playSound(color) {
+  if (sounds[color]) {
+    sounds[color].currentTime = 0; // Reset playback for consecutive presses
+    sounds[color].play();
+  }
+}
+
 // Play the current sequence
 function playSequence() {
   sequence.forEach((color, index) => {
@@ -36,6 +54,7 @@ function playSequence() {
 // Flash the color on the screen
 function flashColor(color) {
   const button = document.getElementById(color);
+  playSound(color);
   button.style.animation = `ajillah${colors.indexOf(color) + 1} 1s linear`;
   setTimeout(() => {
     button.style.animation = "none";
@@ -61,7 +80,7 @@ function checkPlayerInput() {
   }
 
   if (playerSequence.length === sequence.length) {
-    setTimeout(nextLevel, 1000);
+    setTimeout(nextLevel, 500);
   }
 }
 

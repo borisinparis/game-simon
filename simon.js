@@ -28,6 +28,13 @@ const animals = [
     y: 70,
   },
 ];
+
+const sounds = {
+  dove: new Audio("dove.wav"),
+  rabbit: new Audio("rabbit.wav"),
+  monkey: new Audio("monkey.wav"),
+  elephant: new Audio("elephant.wav"),
+};
 // Дүрснүүдийг үүсгэж, байрлуулах функц
 animals.forEach((animal) => {
   // Animal wrapper
@@ -121,6 +128,13 @@ function startGame() {
   nextLevel();
 }
 
+function playSound(animal) {
+  if (sounds[animal]) {
+    sounds[animal].currentTime = 0; // Reset playback for consecutive presses
+    sounds[animal].play();
+  }
+}
+
 // Generate the next sequence
 function nextLevel() {
   level++;
@@ -143,6 +157,7 @@ function playSequence() {
 // Flash the animal on the screen
 function flashAnimal(animal) {
   const button = document.getElementById(animal);
+  playSound(animal);
   button.style.animation = "ajillah 1s linear";
   setTimeout(() => {
     button.style.animation = "none";
@@ -168,7 +183,7 @@ function checkPlayerInput() {
   }
 
   if (playerSequence.length === sequence.length) {
-    setTimeout(nextLevel, 1000);
+    setTimeout(nextLevel, 500);
   }
 }
 

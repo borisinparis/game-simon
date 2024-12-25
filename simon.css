@@ -126,6 +126,7 @@
   bottom: 8%;
   left: 38%;
   font-weight: 300;
+  cursor: pointer;
 }
 .gameOver {
   position: absolute;
