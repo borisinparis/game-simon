@@ -55,10 +55,10 @@ function playSequence() {
 function flashColor(color) {
   const button = document.getElementById(color);
   playSound(color);
-  button.style.animation = `ajillah${colors.indexOf(color) + 1} 1s linear`;
+  button.style.animation = `ajillah${colors.indexOf(color) + 1} 0.5s linear`;
   setTimeout(() => {
     button.style.animation = "none";
-  }, 1000);
+  }, 500);
 }
 
 // Handle player input
