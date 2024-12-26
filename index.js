@@ -24,14 +24,22 @@ function startGame() {
   level = 0;
   nextLevel();
 }
+function shuffle(value) {
+  for (let i = value.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [value[i], value[j]] = [value[j], value[i]];
+  }
+  console.log(value);
+  return value;
+}
 
 // Generate the next sequence
 function nextLevel() {
   level++;
   level1.innerHTML = level;
   playerSequence = [];
-  const nextColor = colors[Math.floor(Math.random() * colors.length)];
-  sequence.push(nextColor);
+  sequence.push(colors[Math.floor(Math.random() * colors.length)]);
+  shuffle(sequence);
   playSequence();
 }
 
@@ -55,13 +63,13 @@ function playSequence() {
 function flashColor(color) {
   const button = document.getElementById(color);
   playSound(color);
-  button.style.animation = `ajillah${colors.indexOf(color) + 1} 1s linear`;
+  button.style.animation = `ajillah${colors.indexOf(color) + 1} 0.5s linear`;
   setTimeout(() => {
     button.style.animation = "none";
-  }, 1000);
+  }, 500);
 }
 
-// Handle player input
+//Handle player input
 function handlePlayerInput(color) {
   playerSequence.push(color);
   flashColor(color);

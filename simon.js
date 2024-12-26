@@ -158,10 +158,10 @@ function playSequence() {
 function flashAnimal(animal) {
   const button = document.getElementById(animal);
   playSound(animal);
-  button.style.animation = "ajillah 1s linear";
+  button.style.animation = "ajillah 0.5s linear";
   setTimeout(() => {
     button.style.animation = "none";
-  }, 1000);
+  }, 500);
 }
 
 // Handle player input
